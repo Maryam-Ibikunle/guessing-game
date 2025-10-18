@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="guessingGame.css">
+</head>
+<body id="body">
+    <section id="difficulty-screen">
+        <h1>Welcome to my Guessing Game</h1>
+        <p>Please, collapse the buttons to read the details.</p>
+        <details>
+            <summary><button class="button" id="easy" value="easy">Easy</button></summary>
+            <p>You have 5 attempts to guess the correct number between the range of 1 and 9</p>
+        </details>
+        <br>
+        <details>
+            <summary><button class="button" id="medium" value="medium">Medium</button></summary>
+            <p>You have 15 attempts to guess the correct number between the range of 1 and 99</p>
+        </details>
+        <br>
+        <details>
+            <summary><button class="button" id="hard" value="hard">Hard</button></summary>
+            <p>You have 10 attempts to guess the correct number between the range of 1 and 99</p>
+        </details>
+        <br>
+        <details>
+            <summary><button class="button" id="custom">Custom</button></summary>
+            <p>You are in control, you can choose your number of attempts to guess the correct number between the range of you select!</p>
+        </details>
+    </section>
+    <section id="game-screen">
+        <h1 id="heading">GUESSING GAME</h1>
+       
+        <h1 id="guess-response">Guess a random number</h1>
+        
+        <input type="number" id="input"><br>
+        <button id="end-game">END GAME</button>
+        <p id="score"></p>
+        <h1 id="timer">00:00</h1>
+        <details>
+            <summary>Instructions</summary>
+            <p id="instruction"></p>
+        </details>
+        </section>
+    <script src="guessingGame.js"></script>
+</body>
+</html>

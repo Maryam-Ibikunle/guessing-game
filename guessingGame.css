@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+#game-screen, #difficulty-screen{
+    background: white;
+    width: 350px;
+    min-height: 500px;
+    box-shadow: 0px 4px 15px rgba(52, 6, 6, 0.438);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+#guess-response{
+    height: 30px;
+}
+button{
+    background-color: rgb(29, 144, 144);
+    color: white;
+    width: 110px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: larger
+}
+button:hover{
+    background-color: rgba(29, 144, 144, 0.577);
+}
+
+#difficulty-screen{
+    padding-left: 20px;
+    align-items: start;
+}
+#end-game{
+    width: fit-content;
+}
+#guess-response{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 70px;
+    background-color: rgba(0, 255, 255, 0.36);
+    color: rgb(67, 65, 65);
+}
