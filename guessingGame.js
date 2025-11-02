@@ -3,6 +3,10 @@ const guessResponse = document.getElementById("guess-response")
 const timer = document.getElementById("timer");
 const buttons = document.querySelectorAll(".button");
 const endGameButton = document.getElementById("end-game")
+const customSetting = document.getElementById("custom-setting")
+const customMaxValue = document.getElementById("custom-range")
+const customTimeLimit = document.getElementById("custom-limit")
+customSetting.style.display = "none"
 let score = 0;
 let count;
 
@@ -99,5 +103,11 @@ function selectDifficulty(e){
         app(1,100,15,10)
         timer.innerText = "00:15"
         // buttons.forEach(button => button.disabled = true)
-    }
-}
+    }else if (value == "custom"){
+        customSetting.style.display = "flex"
+        if (customMaxValue.value != "" && customTimeLimit.value != ""){
+            app(1, customMaxValue.value, customTimeLimit.value,10)
+        }
+
+        
+    }}
