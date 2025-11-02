@@ -4,6 +4,7 @@ const timer = document.getElementById("timer");
 const buttons = document.querySelectorAll(".button");
 const endGameButton = document.getElementById("end-game")
 let score = 0;
+let count;
 
 function app(min,max, timeLeft, attempts){
     
@@ -18,8 +19,9 @@ function app(min,max, timeLeft, attempts){
     const timeFrame = timeLeft;
 
     function time(timeleft){
+        clearInterval(count)
         timeleft = timeLeft
-        let count = setInterval(()=>{
+        count = setInterval(()=>{
             timer.innerHTML=`00:${String(timeLeft).padStart(2, "0")}`
             if (input.value == GUESS){
                 clearInterval(count)
@@ -90,7 +92,7 @@ function selectDifficulty(e){
     value = e.target.value;
     if (value == "easy"){
         app(1,10,20,5)
-        buttons.forEach(button => button.disabled = true)
+        // buttons.forEach(button => button.disabled = true)
     }else if(value=="medium"){
         app(1,50,20,15)
         buttons.forEach(button => button.disabled = true)
