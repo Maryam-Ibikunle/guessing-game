@@ -95,9 +95,10 @@ function selectDifficulty(e){
         // buttons.forEach(button => button.disabled = true)
     }else if(value=="medium"){
         app(1,50,20,15)
-        buttons.forEach(button => button.disabled = true)
+        // buttons.forEach(button => button.disabled = true)
     }else if (value=="hard"){
         app(1,100,15,10)
-        buttons.forEach(button => button.disabled = true)
+        timer.innerText = "00:15"
+        // buttons.forEach(button => button.disabled = true)
     }
 }
