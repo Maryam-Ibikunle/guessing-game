@@ -40,7 +40,7 @@ function app(min,max, timeLeft, attempts){
         if (value != "") attempt++;
         console.log(value, GUESS)
         guessResponse.innerHTML = responseFunction(value);
-        if (attempt >= attempts){
+        if (attempt > attempts){
             input.disabled = true;
             setTimeout(()=>{
                 guessResponse.innerHTML= `Game is over after ${attempts} attempts`},1000)
