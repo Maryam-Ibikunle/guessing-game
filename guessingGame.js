@@ -18,17 +18,16 @@ function app(min,max, timeLeft, attempts){
     Math.ceil(timeLeft);
     const timeFrame = timeLeft;
 
-    function time(timeleft){
+    function time(){
         clearInterval(count)
-        timeleft = timeLeft
         count = setInterval(()=>{
-            timer.innerHTML=`00:${String(timeLeft).padStart(2, "0")}`
+            timer.innerText=`00:${String(timeLeft).padStart(2, "0")}`
             if (input.value == GUESS){
                 clearInterval(count)
             }
             if (timeLeft == 0 && input.value !== GUESS){
                 input.disabled = true;
-                guessResponse.innerHTML="Game is over"
+                guessResponse.innerText="Game is over"
                 clearInterval(count)
             }
             timeLeft--
@@ -41,14 +40,14 @@ function app(min,max, timeLeft, attempts){
         const value = e.target.value;
         if (value != "") attempt++;
         console.log(value, GUESS)
-        guessResponse.innerHTML = responseFunction(value);
+        guessResponse.innerText = responseFunction(value);
         if (attempt > attempts){
             input.disabled = true;
             setTimeout(()=>{
-                guessResponse.innerHTML= `Game is over after ${attempts} attempts`},1000)
+                guessResponse.innerText= `Game is over after ${attempts} attempts`},1000)
             timeLeft =0;
         }
-        // document.getElementById('score').innerHTML=score;
+        // document.getElementById('score').innerText=score;
         // console.log(score)
     }
 
@@ -62,17 +61,17 @@ function app(min,max, timeLeft, attempts){
             response = `Correct! It took you ${attempt} guesses and ${timeFrame - timeLeft} seconds`
             score = score + 5;
             input.disabled = true;
-            endGameButton.innerHTML = "CONTINUE"
+            endGameButton.innerText = "CONTINUE"
         }else if (value == ""){
             response = "Enter a number"
         }
         return response;
     }
-    document.getElementById('instruction').innerHTML = `My secret number is between 1 and ${max} \n You have ${timeLeft} to guess this number. \n Enter your guess and I will tell you whether it is too high or too low. \n Good luck!`
+    document.getElementById('instruction').innerText = `My secret number is between 1 and ${max} \n You have ${timeLeft} to guess this number. \n Enter your guess and I will tell you whether it is too high or too low. \n Good luck!`
 
     endGameButton.addEventListener('click', endGame)
     function endGame(){
-        if (endGameButton.innerHTML === "END GAME"){
+        if (endGameButton.innerText === "END GAME"){
             document.getElementById('game-screen').style.display = "none";
             document.getElementById('difficulty-screen').style.display = "flex";
             timeLeft = 20;
