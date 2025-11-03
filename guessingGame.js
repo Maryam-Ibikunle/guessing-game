@@ -54,7 +54,7 @@ function app(min,max, timeLeft, maxAttempts){
             input.disabled = true;
             setTimeout(()=>{
                 guessResponse.innerText= `Game is over after ${attempts} attempts`},1500)
-            timeLeft =0;
+            timeLeft = 0;
         }
         // document.getElementById('score').innerText=score;
         // console.log(score)
@@ -86,6 +86,7 @@ function app(min,max, timeLeft, maxAttempts){
             document.getElementById('game-screen').style.display = "none";
             document.getElementById('difficulty-screen').style.display = "flex";
             timeLeft = 20;
+            
     }
 }
 }
