@@ -8,9 +8,13 @@ const customMaxValue = document.getElementById("custom-range")
 const customTimeLimit = document.getElementById("custom-limit")
 customSetting.style.display = "none"
 let score = 0;
+let attempt;
 let count;
 
-function app(min,max, timeLeft, attempts){
+function app(min,max, timeLeft, maxAttempts){
+    let attempts = maxAttempts;
+    attempt = 0;
+    input.disabled = false;
     
     document.getElementById('game-screen').style.display = "flex";
     document.getElementById('difficulty-screen').style.display = "none";
@@ -38,17 +42,18 @@ function app(min,max, timeLeft, attempts){
         },1000)
     }time()
         
-    let attempt = 0;
+    
     input.addEventListener("input", inputFunction)
     function inputFunction(e){
-        const value = e.target.value;
+        let value = e.target.value;
         if (value != "") attempt++;
-        console.log(value, GUESS)
+        console.log(attempt)
+        // console.log(value, GUESS)
         guessResponse.innerText = responseFunction(value);
         if (attempt > attempts){
             input.disabled = true;
             setTimeout(()=>{
-                guessResponse.innerText= `Game is over after ${attempts} attempts`},1000)
+                guessResponse.innerText= `Game is over after ${attempts} attempts`},1500)
             timeLeft =0;
         }
         // document.getElementById('score').innerText=score;
@@ -69,7 +74,9 @@ function app(min,max, timeLeft, attempts){
         }else if (value == ""){
             response = "Enter a number"
         }
+        value =0
         return response;
+        
     }
     document.getElementById('instruction').innerText = `My secret number is between 1 and ${max} \n You have ${timeLeft} to guess this number. \n Enter your guess and I will tell you whether it is too high or too low. \n Good luck!`
 
