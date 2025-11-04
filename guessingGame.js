@@ -13,7 +13,7 @@ let count;
 
 function app(min,max, timeLeft, maxAttempts){
     customSetting.style.display = "none"
-    buttons[3].textContent = "CUSTOM"
+    buttons[3].textContent = "Custom"
     let attempts = maxAttempts;
     attempt = 0;
     input.disabled = false;
@@ -84,12 +84,12 @@ function app(min,max, timeLeft, maxAttempts){
 
     endGameButton.addEventListener('click', endGame)
     function endGame(){
-        if (endGameButton.innerText === "END GAME"){
+        // if (endGameButton.innerText === "END GAME"){
             document.getElementById('game-screen').style.display = "none";
             document.getElementById('difficulty-screen').style.display = "flex";
             timeLeft = 20;
             
-    }
+    // }
 }
 }
 
@@ -124,7 +124,6 @@ function selectDifficulty(e){
         if (customMaxValue.value != "" && customTimeLimit.value != ""){
             app(1, customMaxValue.value, customTimeLimit.value,10)
         }
-        // customSetting.style.display = "none"
     }
 
 }
