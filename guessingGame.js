@@ -12,6 +12,8 @@ let attempt;
 let count;
 
 function app(min,max, timeLeft, maxAttempts){
+    customSetting.style.display = "none"
+    buttons[3].textContent = "CUSTOM"
     let attempts = maxAttempts;
     attempt = 0;
     input.disabled = false;
@@ -113,9 +115,16 @@ function selectDifficulty(e){
         // buttons.forEach(button => button.disabled = true)
     }else if (value == "custom"){
         customSetting.style.display = "flex"
+        buttons[3].textContent = "START"
+        // e.textContent = "START"
+        
+
+        
+    }if (value == "custom" && buttons[3].textContent == "START"){
         if (customMaxValue.value != "" && customTimeLimit.value != ""){
             app(1, customMaxValue.value, customTimeLimit.value,10)
         }
+        // customSetting.style.display = "none"
+    }
 
-        
-    }}
+}
