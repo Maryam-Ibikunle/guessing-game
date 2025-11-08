@@ -12,6 +12,10 @@ let attempt;
 let count;
 
 function app(min,max, timeLeft, maxAttempts){
+if (timeLeft > 60){
+    timer.innerText = `${String(Math.floor(timeLeft/60)).padStart(2, "0")}:${String(timeLeft%60).padStart(2, "0")}`
+}
+
     customSetting.style.display = "none"
     buttons[3].textContent = "Custom"
     let attempts = maxAttempts;
@@ -31,7 +35,7 @@ function app(min,max, timeLeft, maxAttempts){
     function time(){
         clearInterval(count)
         count = setInterval(()=>{
-            timer.innerText=`00:${String(timeLeft).padStart(2, "0")}`
+            timer.innerText = `${String(Math.floor(timeLeft/60)).padStart(2, "0")}:${String(timeLeft%60).padStart(2, "0")}`
             if (input.value == GUESS){
                 clearInterval(count)
             }
