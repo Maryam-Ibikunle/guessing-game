@@ -84,7 +84,7 @@ if (timeLeft > 60){
         return response;
         
     }
-    document.getElementById('instruction').innerText = `My secret number is between 1 and ${max} \n You have ${timeLeft} to guess this number. \n Enter your guess and I will tell you whether it is too high or too low. \n Good luck!`
+    document.getElementById('instruction').innerText = `My secret number is between 1 and ${max} \n You have ${timeLeft} seconds and ${maxAttempts} total attempts to guess this number. \n Enter your guess and I will tell you whether it is too high or too low. \n Good luck!`
 
     endGameButton.addEventListener('click', endGame)
     function endGame(){
