@@ -3,7 +3,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(9, 176, 176, 0.924);
+    background-color: aqua;
 }
 #game-screen, #difficulty-screen{
     background: white;
