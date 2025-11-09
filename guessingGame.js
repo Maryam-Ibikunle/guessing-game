@@ -108,13 +108,13 @@ buttons.forEach(button => {
 function selectDifficulty(e){
     value = e.target.value;
     if (value == "easy"){
-        app(1,10,20,5)
+        app(1,10,20,10)
         // buttons.forEach(button => button.disabled = true)
     }else if(value=="medium"){
-        app(1,50,20,15)
+        app(1,10,20,5)
         // buttons.forEach(button => button.disabled = true)
     }else if (value=="hard"){
-        app(1,100,15,10)
+        app(1,10,15,5)
         timer.innerText = "00:15"
         // buttons.forEach(button => button.disabled = true)
     }else if (value == "custom"){
